@@ -19,7 +19,7 @@ jobs:
         dotnet-version: '6.0.x'  # Uppdaterat till 6.0.x, då det är den senaste versionen.
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore xUnitTests/xUnitTests.csproj
 
     - name: Build
       run: dotnet build --configuration Release --no-restore
