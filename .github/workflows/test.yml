@@ -3,7 +3,7 @@ name: .NET Core CI
 on:
   push:
     branches:
-    - 'Developer'
+      - 'Developer'
 
 jobs:
   build:
@@ -16,15 +16,19 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '6.0.x'  # Uppdaterat till 6.0.x, då det är den senaste versionen.
+        dotnet-version: '8.0' 
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore xUnitTests/xUnitTests.csproj
 
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: |
+        cd xUnitTests
+        dotnet build --configuration Release --no-restore
 
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: |
+        cd xUnitTests
+        dotnet test xUnitTests.csproj
       env:
         DOTNET_CLI_TELEMETRY_OPTOUT: true
