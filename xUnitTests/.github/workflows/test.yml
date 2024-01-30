@@ -1,0 +1,30 @@
+name: .NET Core CI
+
+on:
+  push:
+    branches:
+    - 'Developer'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0.x'  # Uppdaterat till 6.0.x, då det är den senaste versionen.
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+      env:
+        DOTNET_CLI_TELEMETRY_OPTOUT: true
