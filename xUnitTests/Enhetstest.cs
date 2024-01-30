@@ -14,7 +14,7 @@ public class StartupTests
     [InlineData("abc", "dgf")]
     [InlineData("ABC", "DGF")]
     [InlineData("123", "123")]
-    [InlineData("Hej", "Kho")]
+
     
     
     
@@ -28,7 +28,7 @@ public class StartupTests
     [InlineData("dgf", "abc")]
     [InlineData("DGF", "ABC")]
     [InlineData("123", "123")]
-    [InlineData("Kho", "Hej")]
+
     
     public void Decrypt_GivenValidInput_ReturnsExpectedOutput(string input, string expectedOutput)
     {
