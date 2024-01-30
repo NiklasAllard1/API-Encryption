@@ -22,9 +22,13 @@ jobs:
       run: dotnet restore xUnitTests/xUnitTests.csproj
 
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: |
+        cd xUnitTests
+        dotnet build --configuration Release --no-restore
 
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: |
+        cd xUnitTests
+        dotnet test --no-build --verbosity normal
       env:
         DOTNET_CLI_TELEMETRY_OPTOUT: true
