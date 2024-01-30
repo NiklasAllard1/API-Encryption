@@ -16,7 +16,7 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '8.0'  # Uppdaterat till 6.0.x, då det är den senaste versionen.
+        dotnet-version: '8.0' 
 
     - name: Restore dependencies
       run: dotnet restore xUnitTests/xUnitTests.csproj
