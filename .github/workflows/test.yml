@@ -3,7 +3,7 @@ name: .NET Core CI
 on:
   push:
     branches:
-    - 'Developer'
+      - 'Developer'
 
 jobs:
   build:
@@ -11,25 +11,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '8.0' 
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '8.0' 
 
-    - name: Restore dependencies
-      run: dotnet restore xUnitTests/xUnitTests.csproj
+      - name: Restore dependencies
+        run: dotnet restore xUnitTests/xUnitTests.csproj
 
-    - name: Build
-      run: |
-        cd xUnitTests
-        dotnet build --configuration Release --no-restore
+      - name: Build
+        run: |
+          cd xUnitTests
+          dotnet build --configuration Release --no-restore
 
-    - name: Test
-  run: |
-    cd xUnitTests
-    dotnet test --no-build --verbosity normal --test-adapter-path:. --logger:"trx;LogFileName=test_results.trx" --collect:"Code Coverage"
-  env:
-    DOTNET_CLI_TELEMETRY_OPTOUT: true
-
+      - name: Test
+        run: |
+          cd xUnitTests
+          dotnet test --no-build --verbosity normal --test-adapter-path:. --logger:"trx;LogFileName=test_results.trx" --collect:"Code Coverage"
+        env:
+          DOTNET_CLI_TELEMETRY_OPTOUT: true
