@@ -28,6 +28,6 @@ jobs:
 
     - name: Test
       run: |
-        dotnet test --no-build --verbosity normal --test-adapter-path:. --logger:"trx;LogFileName=test_results.trx" --collect:"Code Coverage"
+        dotnet test xUnitTests.csproj
       env:
         DOTNET_CLI_TELEMETRY_OPTOUT: true
