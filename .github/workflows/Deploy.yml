@@ -1,0 +1,27 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - 'Deployment_yml'  # Byt ut 'main' mot din huvudgren om det är annorlunda
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install dependencies and build
+      run: |
+        cd CesarAPI
+        npm install  # Om du har några beroenden att installera
+        npm run build  # Bygg din webbplats
+
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@4.1.5
+      with:
+        branch: Deployment_yml  # GitHub Pages-branchen
+        folder: CesarAPI/wwwroot  # Sökvägen till din webbplats
+        build_dir: CesarAPI/wwwroot  # Sökvägen till byggkatalogen
