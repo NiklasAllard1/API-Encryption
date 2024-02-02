@@ -1,11 +1,9 @@
-using System;
-using System.IO;
-using System.Text;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.Text;
 
 namespace API
 {
@@ -25,6 +23,8 @@ namespace API
 
             app.UseRouting();
 
+            app.UseStaticFiles(); //möjliggör statiska filer
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGet("/", async context =>
@@ -32,7 +32,7 @@ namespace API
                     await context.Response.WriteAsync("Welcome to Cesar decryption!");
                 });
 
-                endpoints.MapGet("/krypterad", async context =>
+                endpoints.MapGet("/encrypt", async context =>
                 {
                     string originalText = context.Request.Query["text"];
                     if (string.IsNullOrEmpty(originalText))
@@ -46,12 +46,12 @@ namespace API
                     await context.Response.WriteAsync(encryptedText);
                 });
 
-                endpoints.MapGet("/avkrypterad", async context =>
+                endpoints.MapGet("/decrypt", async context =>
                 {
-                    string ciphertext = context.Request.Query["ciphertext"];
+                    string ciphertext = context.Request.Query["cipher"];
                     if (string.IsNullOrEmpty(ciphertext))
                     {
-                        await context.Response.WriteAsync("Please provide a valid 'ciphertext' parameter.");
+                        await context.Response.WriteAsync("Please provide a valid 'cipher' parameter.");
                         return;
                     }
 
@@ -63,71 +63,54 @@ namespace API
         }
 
         public string Encrypt(string plaintext)
-{
-    StringBuilder encryptedText = new StringBuilder();
-    bool use3Steps = true;
-
-    foreach (char c in plaintext)
-    {
-        int shift = use3Steps ? 3 : 5;
-
-        if (char.IsLetter(c))
         {
-            char baseChar = char.IsUpper(c) ? 'A' : 'a';
-            char shiftedChar = (char)(((c - baseChar + shift) % 26) + baseChar);
-            encryptedText.Append(shiftedChar);
-        }
-        else
-        {
-            encryptedText.Append(c);
-        }
+            StringBuilder encryptedText = new StringBuilder();
+            bool use3Steps = true;
 
-        use3Steps = !use3Steps; // Växla mellan 3 och 5 steg
-    }
+            foreach (char c in plaintext)
+            {
+                int shift = use3Steps ? 3 : 5;
 
-    return encryptedText.ToString();
-}
-
-public string Decrypt(string ciphertext)
-{
-    StringBuilder decryptedText = new StringBuilder();
-    bool use3Steps = true;
-
-    foreach (char c in ciphertext)
-    {
-        int shift = use3Steps ? 3 : 5;
-
-        if (char.IsLetter(c))
-        {
-            char baseChar = char.IsUpper(c) ? 'A' : 'a';
-            char shiftedChar = (char)(((c - baseChar - shift + 26) % 26) + baseChar);
-            decryptedText.Append(shiftedChar);
-            use3Steps = !use3Steps; // Växla mellan 3 och 5 steg för nästa tecken
-        }
-        else
-        {
-            decryptedText.Append(c);
-        }
-    }
-
-    return decryptedText.ToString();
-}
-
-
-    }
-
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            CreateHostBuilder(args).Build().Run();
-        }
-
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
+                if (char.IsLetter(c))
                 {
-                    webBuilder.UseStartup<Startup>();
-                });
+                    char baseChar = char.IsUpper(c) ? 'A' : 'a';
+                    char shiftedChar = (char)(((c - baseChar + shift) % 26) + baseChar);
+                    encryptedText.Append(shiftedChar);
+                }
+                else
+                {
+                    encryptedText.Append(c);
+                }
+
+                use3Steps = !use3Steps; // Växla mellan 3 och 5 steg
+            }
+
+            return encryptedText.ToString();
+        }
+
+        public string Decrypt(string ciphertext)
+        {
+            StringBuilder decryptedText = new StringBuilder();
+            bool use3Steps = true;
+
+            foreach (char c in ciphertext)
+            {
+                int shift = use3Steps ? 3 : 5;
+
+                if (char.IsLetter(c))
+                {
+                    char baseChar = char.IsUpper(c) ? 'A' : 'a';
+                    char shiftedChar = (char)(((c - baseChar - shift + 26) % 26) + baseChar);
+                    decryptedText.Append(shiftedChar);
+                    use3Steps = !use3Steps; // Växla mellan 3 och 5 steg för nästa tecken
+                }
+                else
+                {
+                    decryptedText.Append(c);
+                }
+            }
+
+            return decryptedText.ToString();
+        }
     }
 }
