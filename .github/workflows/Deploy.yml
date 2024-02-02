@@ -1,9 +1,9 @@
-name: Build and Deploy
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - 'Deployment_yml'  # Byt ut 'main' mot din huvudgren om det är annorlunda
+      - APIprojekt  # Byt ut 'main' mot din huvudgren om det är annorlunda
 
 jobs:
   deploy:
@@ -13,15 +13,8 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Install dependencies and build
-      run: |
-        cd CesarAPI
-        npm install  # Om du har några beroenden att installera
-        npm run build  # Bygg din webbplats
-
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@4.1.5
       with:
-        branch: Deployment_yml  # GitHub Pages-branchen
-        folder: CesarAPI/wwwroot  # Sökvägen till din webbplats
-        build_dir: CesarAPI/wwwroot  # Sökvägen till byggkatalogen
+        branch: Deployment_yml  # GitHub Pages-branchen där din webbplats kommer att publiceras
+        folder: APIprojekt/CesarAPI/wwwroot  # Sökvägen till din webbplats
