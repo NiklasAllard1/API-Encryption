@@ -12,6 +12,7 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 <ItemGroup>
-  <None Include="index.html" CopyToOutputDirectory="PreserveNewest" />
+  <None Include="wwwroot/index.html" CopyToOutputDirectory="PreserveNewest" />
 </ItemGroup>
+
 </Project>
