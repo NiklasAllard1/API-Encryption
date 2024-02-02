@@ -1,6 +1,0 @@
-@CesarAPI_HostAddress = http://localhost:5187
-
-GET {{CesarAPI_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
