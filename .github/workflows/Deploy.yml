@@ -18,3 +18,5 @@ jobs:
       with:
         branch: Deployment_yml  
         folder: CesarAPI/wwwroot  
+        token: ${{ secrets.GH_SECRET }}
+        clean: true
