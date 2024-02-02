@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - APIprojekt  # Byt ut 'main' mot din huvudgren om det är annorlunda
+      - Developer  
 
 jobs:
   deploy:
@@ -16,5 +16,5 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@4.1.5
       with:
-        branch: Deployment_yml  # GitHub Pages-branchen där din webbplats kommer att publiceras
-        folder: APIprojekt/CesarAPI/wwwroot  # Sökvägen till din webbplats
+        branch: Deployment_yml  
+        folder: CesarAPI/wwwroot  
