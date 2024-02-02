@@ -16,12 +16,12 @@ jobs:
     - name: Build and publish .NET Core application
       run: |
         dotnet restore CesarAPI/CesarAPI.csproj
-        dotnet publish -c Release -o publish CesarAPI/CesarAPI.csproj
+        dotnet publish -c Release -o CesarAPI/publish CesarAPI/CesarAPI.csproj
 
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@4.1.5
       with:
         branch: Deployment_yml  
-        folder: publish  
+        folder: CesarAPI/publish  # Uppdatera mappen för publicering
         token: ${{ secrets.GH_SECRET }}
         clean: true

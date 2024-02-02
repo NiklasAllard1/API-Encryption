@@ -1,27 +1,34 @@
-name: Deploy to GitHub Pages
+name: .NET Core CI
 
 on:
   push:
     branches:
-      - Developer  
+      - 'Developer'
 
 jobs:
-  deploy:
+  build:
+
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+    - uses: actions/checkout@v2
 
-    - name: Build and publish .NET Core application
-      run: |
-        dotnet publish CesarAPI/CesarAPI.csproj -o publish
-        cp -r CesarAPI/wwwroot/* publish/wwwroot
-
-    - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@4.1.5
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
       with:
-        branch: Deployment_yml  
-        folder: publish  
-        token: ${{ secrets.GH_SECRET }}
-        clean: true
+        dotnet-version: '8.0' 
+
+    - name: Restore dependencies
+      run: dotnet restore xUnitTests/xUnitTests.csproj
+
+    - name: Build
+      run: |
+        cd xUnitTests
+        dotnet build --configuration Release --no-restore
+
+    - name: Test
+      run: |
+        cd xUnitTests
+        dotnet test xUnitTests.csproj
+      env:
+        DOTNET_CLI_TELEMETRY_OPTOUT: true
