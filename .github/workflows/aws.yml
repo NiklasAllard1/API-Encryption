@@ -25,7 +25,7 @@ jobs:
           dotnet publish -o site
 
       - name: Create zip package
-        run: cd CesarAPI/site && zip ../../site.zip *
+        run: cd APIprojekt/CesarAPI/site && zip ../../site.zip *
 
       - name: Deploy to AWS EB
         uses: einaregilsson/beanstalk-deploy@v21
