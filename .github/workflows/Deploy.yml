@@ -14,12 +14,14 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Build and publish .NET Core application
-      run: dotnet publish -c Release -o ${{ github.workspace }}/publish CesarAPI.csproj
+      run: |
+        dotnet restore CesarAPI/CesarAPI.csproj
+        dotnet publish -c Release -o publish CesarAPI/CesarAPI.csproj
 
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@4.1.5
       with:
         branch: Deployment_yml  
-        folder: ${{ github.workspace }}/publish  
+        folder: publish  
         token: ${{ secrets.GH_SECRET }}
         clean: true
