@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - APIprojekt  # Byt ut 'main' mot din huvudgren om det är annorlunda
+      - Deployment_yml # Byt ut 'main' mot din huvudgren om det är annorlunda
 
 jobs:
   deploy:
