@@ -20,9 +20,9 @@ jobs:
 
       - name: Build project  
         run: |
-          cd /cesarAPI
+          cd CesarAPI    # Ändra sökvägen här
           dotnet restore
-          dotnet publish CesarAPI/CesarAPI.csproj
+          dotnet publish -o site
 
       - name: Create zip package
         run: cd CesarAPI/site && zip ../../site.zip *
