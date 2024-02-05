@@ -14,13 +14,9 @@ public class StartupTests
     [InlineData("abc", "dgf")]
     [InlineData("ABC", "DGF")]
     [InlineData("123", "123")]
-
-    
-    
-    
     public void Encrypt_GivenValidInput_ReturnsExpectedOutput(string input, string expectedOutput)
     {
-        string result = _startup.Encrypt(input);
+        string result = CesarCipher.Encrypt(input);
         Assert.Equal(expectedOutput, result);
     }
 
@@ -28,11 +24,10 @@ public class StartupTests
     [InlineData("dgf", "abc")]
     [InlineData("DGF", "ABC")]
     [InlineData("123", "123")]
-
-    
     public void Decrypt_GivenValidInput_ReturnsExpectedOutput(string input, string expectedOutput)
     {
-        string result = _startup.Decrypt(input);
+        string result = CesarCipher.Decrypt(input);
         Assert.Equal(expectedOutput, result);
     }
+
 }
