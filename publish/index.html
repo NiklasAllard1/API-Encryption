@@ -6,6 +6,7 @@
     <title>ENKRYPTO</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
+        /* Din CSS-styling här */
         body {
             font-family: 'Segoe UI', sans-serif;
             margin: 0;
@@ -142,38 +143,54 @@
             <button class="decrypt-btn" onclick="decrypt()">Decrypt</button>
         </div>
     </div>
-    <div class="info-box" id="infoBox">
-        <p>Write your plaintext message in the "Plaintext" field, then click "Encrypt" to encrypt it. 
-        The encrypted message will appear in the "Ciphertext" field. 
-        To decrypt a message, enter the ciphertext in the "Ciphertext" field and click "Decrypt". 
-        The decrypted message will be displayed in the "Plaintext" field.</p>
-    </div>
-    <div class="scroll-indicator" onclick="scrollToInfo()">&#9660;</div>
-    <div class="back-to-top" onclick="scrollToTop()">&#9650;</div>
-
+    
     <script>
-        async function encrypt() {
+        function encrypt() {
             const plaintext = document.getElementById('plaintext').value;
-            const response = await fetch(`/encrypt?text=${encodeURIComponent(plaintext)}`);
-            const encryptedText = await response.text();
+            const encryptedText = cesarEncrypt(plaintext);
             document.getElementById('ciphertext').value = encryptedText;
         }
 
-        async function decrypt() {
+        function decrypt() {
             const ciphertext = document.getElementById('ciphertext').value;
-            const response = await fetch(`/decrypt?cipher=${encodeURIComponent(ciphertext)}`);
-            const decryptedText = await response.text();
+            const decryptedText = cesarDecrypt(ciphertext);
             document.getElementById('plaintext').value = decryptedText;
         }
 
-        function scrollToInfo() {
-            const infoBox = document.getElementById('infoBox');
-            infoBox.style.display = 'block';
-            infoBox.scrollIntoView({ behavior: 'smooth' });
+        // Funktion för att kryptera med Cesar-chiffer
+        function cesarEncrypt(plaintext) {
+            let encryptedText = '';
+            const shift = 3; // Antal steg att skifta
+
+            for (let i = 0; i < plaintext.length; i++) {
+                let charCode = plaintext.charCodeAt(i);
+                if (charCode >= 65 && charCode <= 90) { // Stora bokstäver
+                    encryptedText += String.fromCharCode((charCode - 65 + shift) % 26 + 65);
+                } else if (charCode >= 97 && charCode <= 122) { // Små bokstäver
+                    encryptedText += String.fromCharCode((charCode - 97 + shift) % 26 + 97);
+                } else { // Övriga tecken
+                    encryptedText += plaintext[i];
+                }
+            }
+            return encryptedText;
         }
 
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        // Funktion för att avkryptera med Cesar-chiffer
+        function cesarDecrypt(ciphertext) {
+            let decryptedText = '';
+            const shift = 3; // Antal steg att skifta
+
+            for (let i = 0; i < ciphertext.length; i++) {
+                let charCode = ciphertext.charCodeAt(i);
+                if (charCode >= 65 && charCode <= 90) { // Stora bokstäver
+                    decryptedText += String.fromCharCode((charCode - 65 - shift + 26) % 26 + 65);
+                } else if (charCode >= 97 && charCode <= 122) { // Små bokstäver
+                    decryptedText += String.fromCharCode((charCode - 97 - shift + 26) % 26 + 97);
+                } else { // Övriga tecken
+                    decryptedText += ciphertext[i];
+                }
+            }
+            return decryptedText;
         }
     </script>
 </body>
