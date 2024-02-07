@@ -15,7 +15,7 @@ namespace API
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseRouting(); // Lägg till UseRouting här
+            app.UseRouting(); 
 
             app.UseStaticFiles();
 
@@ -23,7 +23,7 @@ namespace API
             {
                 endpoints.MapGet("/", async context =>
                 {
-                    await context.Response.WriteAsync("Welcome to Cesar cipher API!");
+                    await context.Response.WriteAsync("Welcome to Cesar cipher API! Use http://cesarapi-env.eba-jppdqkjp.eu-north-1.elasticbeanstalk.com/encrypt?text<YOURTEXT> to encrypt and http://cesarapi-env.eba-jppdqkjp.eu-north-1.elasticbeanstalk.com/decrypt?cipher=<YOURCIPHER>");
                 });
 
                 endpoints.MapGet("/encrypt", async context =>
