@@ -4,7 +4,7 @@
 ![Workflow test](https://github.com/NiklasAllard1/API-Encryption/actions/workflows/gh_pages_deploy.yml/badge.svg)
 ![Workflow test](https://github.com/NiklasAllard1/API-Encryption/actions/workflows/unity_test.yml/badge.svg)
 
-</div>
+
 <div style="text-align: center;">
 
   <h2>Använda verktyg</h2>
@@ -17,6 +17,7 @@
   <a href="https://developer.d3khin5f4ob0id.amplifyapp.com/">
     <img src="https://seeklogo.com/images/A/aws-amplify-logo-D68DDB5AB1-seeklogo.com.png" alt="AWS Amplify" style="width: 100px; height: auto; margin: 10px;">
   </a>
+</div>
 </div>
 <div align="center">
   <h1>CesarAPI </h1>
@@ -86,11 +87,12 @@ För att testa endpoints klicka in på
 <a href="http://cesarapi-env.eba-jppdqkjp.eu-north-1.elasticbeanstalk.com/encrypt?text=Default" target="_blank">Kryptera</a>
  <a href="http://cesarapi-env.eba-jppdqkjp.eu-north-1.elasticbeanstalk.com/decrypt?cipher=Gjifxqw" target="_blank">Avkryptera</a>
 
-
+<div align="center">
 <div style="text-align: center;">
   <h2>Meet the maker</h2>
   <a href="https://github.com/NiklasAllard1/API-Encryption/graphs/contributors">
     <img src="https://github.com/niklasallard1.png" />
   </a>
+</div>
 </div>
 
