@@ -8,11 +8,11 @@
 <div style="text-align: center;">
 <div align="center">
   <h2>Använda verktyg</h2>
+   <a href="http://cesarapi-env.eba-jppdqkjp.eu-north-1.elasticbeanstalk.com/">
+    <img src="https://cdn.worldvectorlogo.com/logos/aws-elastic-beanstalk-1.svg" alt="AWS Elastic Beanstalk" style="width: 100px; height: auto; margin: 10px;">
+  </a>
   <a href="https://niklasallard1.github.io/API-Encryption/">
     <img src="https://pages.github.com/images/logo.svg" alt="GitHub Pages" style="width: 100px; height: auto; margin: 10px;">
-  </a>
-  <a href="http://cesarapi-env.eba-jppdqkjp.eu-north-1.elasticbeanstalk.com/">
-    <img src="https://cdn.worldvectorlogo.com/logos/aws-elastic-beanstalk-1.svg" alt="AWS Elastic Beanstalk" style="width: 100px; height: auto; margin: 10px;">
   </a>
   <a href="https://developer.d3khin5f4ob0id.amplifyapp.com/">
     <img src="https://seeklogo.com/images/A/aws-amplify-logo-D68DDB5AB1-seeklogo.com.png" alt="AWS Amplify" style="width: 100px; height: auto; margin: 10px;">
@@ -27,7 +27,7 @@
 ## Introduktion
 
 Denna .NET-baserade webbapplikation erbjuder funktioner för att kryptera och avkryptera ord med hjälp av ett alternativt Cesarchiffer. Applikationen innehåller två endpoints som kan nås via en webbläsare för att utföra dessa operationer. Dessutom har en HTML-sida och en JavaScript-fil laddats upp till GitHub Pages och AWS Amplify för att tillhandahålla en användargränssnitt för att visa hur man kan interagera med dessa endpoints. De båda endpointsen är också distribuerade på AWS Elastic Beanstalk för att säkerställa tillgänglighet och skalbarhet.
-
+</div>
 ## Lokal Körning och Testning
 
 För att köra och testa applikationen lokalt, följ stegen nedan:
