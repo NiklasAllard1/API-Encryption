@@ -6,7 +6,6 @@
     <title>ENKRYPTO</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* Din CSS-styling här */
         body {
             font-family: 'Segoe UI', sans-serif;
             margin: 0;
@@ -145,22 +144,27 @@
     </div>
     
     <script>
+        let encryptionStep = 3;
+
         function encrypt() {
             const plaintext = document.getElementById('plaintext').value;
-            const encryptedText = cesarEncrypt(plaintext);
+            const encryptedText = cesarEncrypt(plaintext, encryptionStep);
             document.getElementById('ciphertext').value = encryptedText;
+            // varfär mellan 3 och 5
+            encryptionStep = (encryptionStep === 3) ? 5 : 3;
         }
 
         function decrypt() {
             const ciphertext = document.getElementById('ciphertext').value;
-            const decryptedText = cesarDecrypt(ciphertext);
+            const decryptedText = cesarDecrypt(ciphertext, encryptionStep);
             document.getElementById('plaintext').value = decryptedText;
+            // varfär mellan 3 och 5
+            encryptionStep = (encryptionStep === 3) ? 5 : 3;
         }
 
         // Funktion för att kryptera med Cesar-chiffer
-        function cesarEncrypt(plaintext) {
+        function cesarEncrypt(plaintext, shift) {
             let encryptedText = '';
-            const shift = 3; // Antal steg att skifta
 
             for (let i = 0; i < plaintext.length; i++) {
                 let charCode = plaintext.charCodeAt(i);
@@ -176,9 +180,8 @@
         }
 
         // Funktion för att avkryptera med Cesar-chiffer
-        function cesarDecrypt(ciphertext) {
+        function cesarDecrypt(ciphertext, shift) {
             let decryptedText = '';
-            const shift = 3; // Antal steg att skifta
 
             for (let i = 0; i < ciphertext.length; i++) {
                 let charCode = ciphertext.charCodeAt(i);

@@ -20,8 +20,6 @@ namespace API.Controllers
 
         private string EncryptText(string text)
         {
-            // Här implementerar du din krypteringslogik
-            // Exempel: Caesar-kryptering med förskjutning på 3 tecken
             string encryptedText = "";
             foreach (char c in text)
             {
