@@ -17,7 +17,7 @@
   <a href="https://developer.d3khin5f4ob0id.amplifyapp.com/">
     <img src="https://seeklogo.com/images/A/aws-amplify-logo-D68DDB5AB1-seeklogo.com.png" alt="AWS Amplify" style="width: 100px; height: auto; margin: 10px;">
   </a>
-
+</div>
 <div align="center">
   <h1>CesarAPI </h1>
 </div>
@@ -27,11 +27,13 @@
 ## Introduktion
 
 Denna .NET-baserade webbapplikation erbjuder funktioner för att kryptera och avkryptera ord med hjälp av ett alternativt Cesarchiffer. Applikationen innehåller två endpoints som kan nås via en webbläsare för att utföra dessa operationer. Dessutom har en HTML-sida och en JavaScript-fil laddats upp till GitHub Pages och AWS Amplify för att tillhandahålla en användargränssnitt för att visa hur man kan interagera med dessa endpoints. De båda endpointsen är också distribuerade på AWS Elastic Beanstalk för att säkerställa tillgänglighet och skalbarhet.
-</div>
+
+<div align="center">
+
 ## Lokal Körning och Testning
 
 För att köra och testa applikationen lokalt, följ stegen nedan:
-
+</div>
 1. Klona projektet från GitHub:
     bash
     `git clone https://github.com/NiklasAllard1/API-Encryption.git`
@@ -80,8 +82,9 @@ https://niklasallard1.github.io/API-Encryption/
 https://developer.d3khin5f4ob0id.amplifyapp.com/
 
 För att testa endpoints klicka in på 
-http://cesarapi-env.eba-jppdqkjp.eu-north-1.elasticbeanstalk.com/encrypt?text=Default - för att decrypta 
-http://cesarapi-env.eba-jppdqkjp.eu-north-1.elasticbeanstalk.com/decrypt?cipher=Gjifxqw för att avkryptera.
+<a href="http://cesarapi-env.eba-jppdqkjp.eu-north-1.elasticbeanstalk.com/encrypt?text=Default" target="_blank">Kryptera</a>
+ <a href="http://cesarapi-env.eba-jppdqkjp.eu-north-1.elasticbeanstalk.com/decrypt?cipher=Gjifxqw" target="_blank">Avkryptera</a>
+
 
 <div style="text-align: center;">
   <h2>Meet the maker</h2>
