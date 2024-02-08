@@ -1,8 +1,8 @@
 <div align="center">
 
 ![Workflow build](https://github.com/NiklasAllard1/API-Encryption/actions/workflows/aws_deploy.yml/badge.svg)
-![Workflow test](https://github.com/Acrozi/Personnummer-validation/actions/workflows/gh_pages_deploy.yml/badge.svg)
-![Workflow test](https://github.com/Acrozi/Personnummer-validation/actions/workflows/unity_test.yml/badge.svg)
+![Workflow test](https://github.com/NiklasAllard1/API-Encryption/actions/workflows/gh_pages_deploy.yml/badge.svg)
+![Workflow test](https://github.com/NiklasAllard1/API-Encryption/actions/workflows/unity_test.yml/badge.svg)
 
 </div>
 
@@ -34,7 +34,7 @@ För att köra och testa applikationen lokalt, följ stegen nedan:
 5. Kör applikationen:
     `dotnet run`
 
-6. När `dotnet run` körs skapar visual studio en lokal webbserver som går att öppna i webbläsaren för att testa följade endpoints. http://cesarapi-env.eba-jppdqkjp.eu-north-1.elasticbeanstalk.com/encrypt?text<YOURTEXT> - för att decrypta och http://cesarapi-env.eba-jppdqkjp.eu-north-1.elasticbeanstalk.com/decrypt?cipher=<YOURCIPHER> för att avkryptera.
+6. När `dotnet run` körs skapar visual studio en lokal webbserver som går att öppna i webbläsaren för att testa följade endpoints. http://cesarapi-env.eba-jppdqkjp.eu-north-1.elasticbeanstalk.com/encrypt?text=Default - för att decrypta och http://cesarapi-env.eba-jppdqkjp.eu-north-1.elasticbeanstalk.com/decrypt?cipher=Gjifxqw för att avkryptera.
 
 
 7. Kör enhetstester:
@@ -63,8 +63,7 @@ xUnitTest: Projektet som innehåller xUnit-testerna för att validera koden
 
 ## Övrig Information
 
-För ytterligare detaljer och användning, se dokumentationen i källkoden och README.md filen i GitHub.
-Lycka till med användningen av personnummerkontroll applikationen!
+Projektet initierades med målet att utforska och lära sig om Continuous Integration (CI) och Continuous Deployment (CD) processerna inom ramen för ett praktiskt projekt. Det fokuserar på att tillämpa dessa processer i praktiken genom att skapa och distribuera en .NET-baserad webbapplikation. Genom att genomföra CI/CD-processen i projektet får deltagarna möjlighet att förstå och tillämpa bästa praxis för att automatisera bygg-, test- och distributionsprocesserna för att uppnå snabbare och mer pålitliga utvecklingscykler.
 
 <div align="center">
   <h2>Collaborators</h2>
