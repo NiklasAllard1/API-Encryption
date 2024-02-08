@@ -6,7 +6,7 @@
 
 </div>
 <div style="text-align: center;">
-<div align="center">
+
   <h2>Använda verktyg</h2>
    <a href="http://cesarapi-env.eba-jppdqkjp.eu-north-1.elasticbeanstalk.com/">
     <img src="https://cdn.worldvectorlogo.com/logos/aws-elastic-beanstalk-1.svg" alt="AWS Elastic Beanstalk" style="width: 100px; height: auto; margin: 10px;">
@@ -28,12 +28,11 @@
 
 Denna .NET-baserade webbapplikation erbjuder funktioner för att kryptera och avkryptera ord med hjälp av ett alternativt Cesarchiffer. Applikationen innehåller två endpoints som kan nås via en webbläsare för att utföra dessa operationer. Dessutom har en HTML-sida och en JavaScript-fil laddats upp till GitHub Pages och AWS Amplify för att tillhandahålla en användargränssnitt för att visa hur man kan interagera med dessa endpoints. De båda endpointsen är också distribuerade på AWS Elastic Beanstalk för att säkerställa tillgänglighet och skalbarhet.
 
-<div align="center">
 
 ## Lokal Körning och Testning
 
 För att köra och testa applikationen lokalt, följ stegen nedan:
-</div>
+
 
 1. Klona projektet från GitHub:
     bash
@@ -56,16 +55,16 @@ För att köra och testa applikationen lokalt, följ stegen nedan:
 7. Kör enhetstester:
     `dotnet test`
 
-<div align="center">
+
 Se resultaten av enhetstesterna för att säkerställa korrekt funktionalitet.
 
 ## Enhetstester
 
 För att säkerställa korrekt funktionalitet har enhetstester skapats med hjälp av xUnit-ramverket. Enhetstestet validerar följande.
-</div>
+
 
 1. Validering av kryptering med testkryptering.
-<div align="center">
+
 Projektet innehåller två projekt
 
 CesarAPI: Huvudprojektet som innehåller kodfilen Startup.cs.
@@ -95,4 +94,3 @@ För att testa endpoints klicka in på
   </a>
 </div>
 
-</div>
