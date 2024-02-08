@@ -34,6 +34,7 @@ Denna .NET-baserade webbapplikation erbjuder funktioner för att kryptera och av
 
 För att köra och testa applikationen lokalt, följ stegen nedan:
 </div>
+
 1. Klona projektet från GitHub:
     bash
     `git clone https://github.com/NiklasAllard1/API-Encryption.git`
@@ -55,19 +56,20 @@ För att köra och testa applikationen lokalt, följ stegen nedan:
 7. Kör enhetstester:
     `dotnet test`
 
+<div align="center">
 Se resultaten av enhetstesterna för att säkerställa korrekt funktionalitet.
 
 ## Enhetstester
 
 För att säkerställa korrekt funktionalitet har enhetstester skapats med hjälp av xUnit-ramverket. Enhetstestet validerar följande.
+</div>
 
 1. Validering av kryptering med testkryptering.
-
+<div align="center">
 Projektet innehåller två projekt
 
 CesarAPI: Huvudprojektet som innehåller kodfilen Startup.cs.
 xUnitTest: Projektet som innehåller xUnit-testerna för att validera koden
-
 
 
 ## Övrig Information
@@ -93,3 +95,4 @@ För att testa endpoints klicka in på
   </a>
 </div>
 
+</div>
