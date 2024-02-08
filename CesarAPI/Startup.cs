@@ -23,7 +23,7 @@ namespace API
             {
                 endpoints.MapGet("/", async context =>
                 {
-                    await context.Response.WriteAsync("Welcome to Cesar cipher API! Use http://cesarapi-env.eba-jppdqkjp.eu-north-1.elasticbeanstalk.com/encrypt?text<YOURTEXT> to encrypt and http://cesarapi-env.eba-jppdqkjp.eu-north-1.elasticbeanstalk.com/decrypt?cipher=<YOURCIPHER>");
+                    await context.Response.WriteAsync("Welcome to Cesar cipher API!/n/n Use http://cesarapi-env.eba-jppdqkjp.eu-north-1.elasticbeanstalk.com/encrypt?text<YOURTEXT> to encrypt/n Use http://cesarapi-env.eba-jppdqkjp.eu-north-1.elasticbeanstalk.com/decrypt?cipher=<YOURCIPHER> to decrypt");
                 });
 
                 endpoints.MapGet("/encrypt", async context =>
