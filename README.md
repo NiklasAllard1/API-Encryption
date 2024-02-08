@@ -42,12 +42,6 @@ För att köra och testa applikationen lokalt, följ stegen nedan:
 
 Se resultaten av enhetstesterna för att säkerställa korrekt funktionalitet.
 
-## Körning med Docker
-
-
-## Körning med .EXE
-
-
 ## Enhetstester
 
 För att säkerställa korrekt funktionalitet har enhetstester skapats med hjälp av xUnit-ramverket. Enhetstestet validerar följande.
@@ -65,9 +59,20 @@ xUnitTest: Projektet som innehåller xUnit-testerna för att validera koden
 
 Projektet initierades med målet att utforska och lära sig om Continuous Integration (CI) och Continuous Deployment (CD) processerna inom ramen för ett praktiskt projekt. Det fokuserar på att tillämpa dessa processer i praktiken genom att skapa och distribuera en .NET-baserad webbapplikation. Genom att genomföra CI/CD-processen i projektet får deltagarna möjlighet att förstå och tillämpa bästa praxis för att automatisera bygg-, test- och distributionsprocesserna för att uppnå snabbare och mer pålitliga utvecklingscykler.
 
+för mer information om CI/CD processen klicka in på 
+https://www.figma.com/file/siwE10NkNq1SK4K2aSje8l/API-Projekt?type=whiteboard&node-id=1%3A9093&t=3znLxSMkrLpgaitR-1
+
+För att se min frontend klicka in på någon av dessa länkar
+https://niklasallard1.github.io/API-Encryption/
+https://developer.d3khin5f4ob0id.amplifyapp.com/
+
+För att testa endpoints klicka in på 
+http://cesarapi-env.eba-jppdqkjp.eu-north-1.elasticbeanstalk.com/encrypt?text=Default - för att decrypta 
+http://cesarapi-env.eba-jppdqkjp.eu-north-1.elasticbeanstalk.com/decrypt?cipher=Gjifxqw för att avkryptera.
+
 <div align="center">
   <h2>Collaborators</h2>
   <a href="https://github.com/Acrozi/Personnummer-validation/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=Acrozi/Personnummer-validation" />
+    <img src="https://github.com/niklasallard1.png" />
   </a>
 </div>
