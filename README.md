@@ -74,7 +74,7 @@ xUnitTest: Projektet som innehåller xUnit-testerna för att validera koden
 
 ## Övrig Information
 
-Projektet initierades med målet att utforska och lära sig om Continuous Integration (CI) och Continuous Deployment (CD) processerna inom ramen för ett praktiskt projekt. Det fokuserar på att tillämpa dessa processer i praktiken genom att skapa och distribuera en .NET-baserad webbapplikation. Genom att genomföra CI/CD-processen i projektet får deltagarna möjlighet att förstå och tillämpa bästa praxis för att automatisera bygg-, test- och distributionsprocesserna för att uppnå snabbare och mer pålitliga utvecklingscykler.
+Projektet initierades med målet att utforska och lära sig om Continuous Integration (CI) och Continuous Deployment (CD) processerna inom ramen för ett praktiskt projekt. Det fokuserar på att tillämpa dessa processer i praktiken genom att skapa och distribuera en .NET-baserad webbapplikation. 
 
 för mer information om CI/CD processen klicka in på 
 https://www.figma.com/file/siwE10NkNq1SK4K2aSje8l/API-Projekt?type=whiteboard&node-id=1%3A9093&t=3znLxSMkrLpgaitR-1
