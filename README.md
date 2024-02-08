@@ -1,6 +1,6 @@
 <div align="center">
 
-![Workflow build](https://github.com/Acrozi/Personnummer-validation/actions/workflows/aws_deploy.yml/badge.svg)
+![Workflow build](https://github.com/NiklasAllard1/API-Encryption/actions/workflows/aws_deploy.yml/badge.svg)
 ![Workflow test](https://github.com/Acrozi/Personnummer-validation/actions/workflows/gh_pages_deploy.yml/badge.svg)
 ![Workflow test](https://github.com/Acrozi/Personnummer-validation/actions/workflows/unity_test.yml/badge.svg)
 
