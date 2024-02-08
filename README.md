@@ -5,12 +5,8 @@
 ![Workflow test](https://github.com/NiklasAllard1/API-Encryption/actions/workflows/unity_test.yml/badge.svg)
 
 </div>
-
-<div align="center">
-  <h1>CesarAPI </h1>
-</div>
-
 <div style="text-align: center;">
+<div align="center">
   <h2>Använda verktyg</h2>
   <a href="https://niklasallard1.github.io/API-Encryption/">
     <img src="https://pages.github.com/images/logo.svg" alt="GitHub Pages" style="width: 100px; height: auto; margin: 10px;">
@@ -21,6 +17,11 @@
   <a href="https://developer.d3khin5f4ob0id.amplifyapp.com/">
     <img src="https://seeklogo.com/images/A/aws-amplify-logo-D68DDB5AB1-seeklogo.com.png" alt="AWS Amplify" style="width: 100px; height: auto; margin: 10px;">
   </a>
+
+<div align="center">
+  <h1>CesarAPI </h1>
+</div>
+
 
 
 ## Introduktion
