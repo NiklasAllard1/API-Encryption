@@ -10,6 +10,18 @@
   <h1>CesarAPI </h1>
 </div>
 
+<div style="text-align: center;">
+  <h2>Services Used</h2>
+  <a href="https://niklasallard1.github.io/API-Encryption/">
+    <img src="https://pages.github.com/images/logo.svg" alt="GitHub Pages" style="width: 100px; height: auto; margin: 10px;">
+  </a>
+  <a href="länk-till-AWS-Elastic-Beanstalk">
+    <img src="länk-till-beanstalk-logotyp" alt="AWS Elastic Beanstalk" style="width: 100px; height: auto; margin: 10px;">
+  </a>
+  <a href="länk-till-AWS-Amplify">
+    <img src="länk-till-amplify-logotyp" alt="AWS Amplify" style="width: 100px; height: auto; margin: 10px;">
+  </a>
+</div>
 
 ## Introduktion
 
@@ -70,9 +82,10 @@ För att testa endpoints klicka in på
 http://cesarapi-env.eba-jppdqkjp.eu-north-1.elasticbeanstalk.com/encrypt?text=Default - för att decrypta 
 http://cesarapi-env.eba-jppdqkjp.eu-north-1.elasticbeanstalk.com/decrypt?cipher=Gjifxqw för att avkryptera.
 
-<div align="center">
-  <h2>Collaborators</h2>
-  <a href="https://github.com/Acrozi/Personnummer-validation/graphs/contributors">
+<div style="text-align: center;">
+  <h2>Meet the maker</h2>
+  <a href="https://github.com/NiklasAllard1/API-Encryption/graphs/contributors">
     <img src="https://github.com/niklasallard1.png" />
   </a>
 </div>
+
