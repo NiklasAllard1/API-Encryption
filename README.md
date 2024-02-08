@@ -50,7 +50,7 @@ För att köra och testa applikationen lokalt, följ stegen nedan:
 5. Kör applikationen:
     `dotnet run`
 
-6. När `dotnet run` körs skapar visual studio en lokal webbserver som går att öppna i webbläsaren för att testa följade endpoints. http://cesarapi-env.eba-jppdqkjp.eu-north-1.elasticbeanstalk.com/encrypt?text=Default - för att decrypta och http://cesarapi-env.eba-jppdqkjp.eu-north-1.elasticbeanstalk.com/decrypt?cipher=Gjifxqw för att avkryptera.
+6. När `dotnet run` körs skapar visual studio en lokal webbserver som går att öppna i webbläsaren för att testa följade endpoints. http://localhost:5187/encrypt?text=Default - för att decrypta och http://localhost:5187/decrypt?cipher=Gjifxqw för att avkryptera. Tänk på att din port kan skilja från den som är i adressen.
 
 
 7. Kör enhetstester:
