@@ -1,3 +1,7 @@
+PROJECT ENDED
+The project have been taken down due to servercosts
+
+
 <div align="center">
 
 ![Workflow build](https://github.com/NiklasAllard1/API-Encryption/actions/workflows/aws_deploy.yml/badge.svg)
