@@ -28,14 +28,14 @@ jobs:
           cd CesarAPI  # Se till att vi är i rätt mapp
           dotnet publish -c Release -o ./publish  # Publicera till ./publish-katalogen
 
-      - name: List directory for debugging
-        run: |
-          ls -al ./CesarAPI/publish  # Lista innehållet för att se om katalogen finns
-
       - name: Zip the published files
         run: |
           cd CesarAPI/publish
           zip -r ../publish.zip .  # Skapa en zip-fil av publiceringsfilerna
+
+      - name: List directory after zipping
+        run: |
+          ls -al ./CesarAPI  # Kontrollera om publish.zip existerar
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -55,6 +55,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: .net-app
+
+      - name: List downloaded files
+        run: |
+          ls -al .  # Lista filerna i den nedladdade artefakten för att verifiera
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
