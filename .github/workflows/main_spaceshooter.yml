@@ -25,7 +25,7 @@ jobs:
 
       - name: dotnet publish
         run: |
-          cd CesarAPI  # Se till att vi är i rätt mapp
+          cd CesarAPI  # Se till att du är i rätt mapp
           dotnet publish -c Release -o ./publish  # Publicera till ./publish-katalogen
 
       - name: Zip the published files
@@ -58,7 +58,7 @@ jobs:
 
       - name: List downloaded files
         run: |
-          ls -al .  # Lista filerna i den nedladdade artefakten för att verifiera
+          ls -al .  # Lista filerna för att verifiera nedladdning
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
@@ -66,5 +66,5 @@ jobs:
         with:
           app-name: 'spaceshooter'
           slot-name: 'Production'
-          package: './CesarAPI/publish.zip'  # Path till zip-filen
+          package: './publish.zip'  # Path till zip-filen i rotkatalogen efter nedladdning
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FBDF5DD8B29D4D2BAD1453F292421EE3 }}
