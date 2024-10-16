@@ -1,6 +1,3 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
 name: Build and deploy ASP.Net Core app to Azure Web App - spaceshooter
 
 on:
@@ -23,17 +20,19 @@ jobs:
 
       - name: Build with dotnet
         run: |
-          cd CesarAPI
+          cd CesarAPI  # Navigera till CesarAPI-katalogen där din projektfil finns
           dotnet build --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        run: |
+          cd CesarAPI  # Se till att du är i rätt mapp
+          dotnet publish -c Release -o ./publish  # Publicerar till ./publish-katalogen
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: .net-app
-          path: ${{env.DOTNET_ROOT}}/myapp
+          path: ./CesarAPI/publish  # Path till den publicerade appen
 
   deploy:
     runs-on: ubuntu-latest
@@ -41,18 +40,18 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-    
+
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
           name: .net-app
-      
+
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'spaceshooter'
           slot-name: 'Production'
-          package: .
+          package: ./CesarAPI/publish  # Path till den publicerade mappen
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FBDF5DD8B29D4D2BAD1453F292421EE3 }}
