@@ -25,8 +25,12 @@ jobs:
 
       - name: dotnet publish
         run: |
-          cd CesarAPI  # Se till att vi är i rätt mapp
+          cd CesarAPI  # Se till att du är i rätt mapp
           dotnet publish -c Release -o ./publish  # Publicera till ./publish-katalogen
+
+      - name: List directory for debugging
+        run: |
+          ls -al ./CesarAPI/publish  # Lista innehållet för att se om katalogen finns
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
