@@ -20,19 +20,19 @@ jobs:
 
       - name: Build with dotnet
         run: |
-          cd CesarAPI  # Navigera till CesarAPI-katalogen där din projektfil finns
+          cd CesarAPI  # Navigera till din projektmapp
           dotnet build --configuration Release
 
       - name: dotnet publish
         run: |
-          cd CesarAPI  # Se till att du är i rätt mapp
-          dotnet publish -c Release -o ./publish  # Publicerar till ./publish-katalogen
+          cd CesarAPI  # Se till att vi är i rätt mapp
+          dotnet publish -c Release -o ./publish  # Publicera till ./publish-katalogen
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: .net-app
-          path: ./CesarAPI/publish  # Path till den publicerade appen
+          path: ./CesarAPI/publish  # Path till den publicerade applikationen
 
   deploy:
     runs-on: ubuntu-latest
@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'spaceshooter'
           slot-name: 'Production'
-          package: ./CesarAPI/publish  # Path till den publicerade mappen
+          package: './CesarAPI/publish'  # Path till den publicerade mappen
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FBDF5DD8B29D4D2BAD1453F292421EE3 }}
